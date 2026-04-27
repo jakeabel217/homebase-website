@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'RohnRounded';
+  src: url('/fonts/webfonts/357A62_3_0.woff2') format('woff2'),
+       url('/fonts/webfonts/357A62_3_0.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RohnRounded';
+  src: url('/fonts/webfonts/357A62_4_0.woff2') format('woff2'),
+       url('/fonts/webfonts/357A62_4_0.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RohnRounded';
+  src: url('/fonts/webfonts/357A62_C_0.woff2') format('woff2'),
+       url('/fonts/webfonts/357A62_C_0.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RohnRounded';
+  src: url('/fonts/webfonts/357A62_8_0.woff2') format('woff2'),
+       url('/fonts/webfonts/357A62_8_0.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

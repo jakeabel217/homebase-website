@@ -17,3 +17,9 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Force SVG icon sizing */
+.pricing svg {
+  width: 20px !important;
+  height: 20px !important;
+}

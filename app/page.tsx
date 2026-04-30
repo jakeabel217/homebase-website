@@ -1,10 +1,20 @@
 'use client';
 
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+
+  const photos = [
+    { src: '/images/workspace.jpg', alt: 'Workspace' },
+    { src: '/images/desk.jpg', alt: 'Desk' },
+    { src: '/images/building.jpg', alt: 'Building' },
+    { src: '/images/aerial.jpg', alt: 'Aerial View' },
+    { src: '/images/entrance.jpg', alt: 'Entrance' },
+    { src: '/images/location.jpg', alt: 'Location' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +24,18 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNextPhoto = () => {
+    if (currentPhotoIndex < photos.length - 3) {
+      setCurrentPhotoIndex(currentPhotoIndex + 1);
+    }
+  };
+
+  const handlePrevPhoto = () => {
+    if (currentPhotoIndex > 0) {
+      setCurrentPhotoIndex(currentPhotoIndex - 1);
+    }
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -343,17 +365,44 @@ export default function Home() {
       {/* Photo Gallery */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-12">The Space</h2>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/workspace.jpg" alt="Workspace" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
+          <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-12">Photo Gallery</h2>
+          <div className="relative">
+            <div className="grid grid-cols-3 gap-4">
+              {photos.slice(currentPhotoIndex, currentPhotoIndex + 3).map((photo, index) => (
+                <div key={currentPhotoIndex + index} className="overflow-hidden rounded-lg">
+                  <img 
+                    src={photo.src} 
+                    alt={photo.alt} 
+                    className="w-full h-64 object-cover hover:scale-110 transition duration-300" 
+                  />
+                </div>
+              ))}
             </div>
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/desk.jpg" alt="Desk" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/building.jpg" alt="Building" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
+            
+            {/* Navigation Arrows */}
+            {currentPhotoIndex > 0 && (
+              <button
+                onClick={handlePrevPhoto}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition"
+                aria-label="Previous photos"
+              >
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            )}
+            
+            {currentPhotoIndex < photos.length - 3 && (
+              <button
+                onClick={handleNextPhoto}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition"
+                aria-label="Next photos"
+              >
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            )}
           </div>
         </div>
       </section>
@@ -372,25 +421,23 @@ export default function Home() {
               Schedule a Tour →
             </a>
           </div>
-          
-          <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
-              <h3 className="font-bold text-gray-900 mb-2">Email</h3>
-              <a href="mailto:jakeabel217@gmail.com" className="text-[#FF5722] hover:underline">jakeabel217@gmail.com</a>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
-              <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
-              <a href="tel:443-376-8512" className="text-[#FF5722] hover:underline">443-376-8512</a>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-[#2D2D2D] text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="text-2xl font-bold mb-4 block">HOMEBASE</span>
+          <span className="text-2xl font-bold mb-6 block">HOMEBASE</span>
+          <div className="flex justify-center gap-12 mb-6">
+            <div>
+              <span className="text-white">Email: </span>
+              <a href="mailto:jakeabel217@gmail.com" className="text-[#FF5722] hover:underline">jakeabel217@gmail.com</a>
+            </div>
+            <div>
+              <span className="text-white">Phone: </span>
+              <a href="tel:443-376-8512" className="text-[#FF5722] hover:underline">443-376-8512</a>
+            </div>
+          </div>
           <p className="text-gray-400 mb-6">300 W Pratt Street, Baltimore, MD 21201</p>
           <p className="text-gray-500 text-sm">© 2026 HomeBase. All rights reserved.</p>
         </div>

@@ -1,88 +1,46 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
     }
   };
 
   return (
     <div className="bg-white">
       {/* Fixed Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <nav className="fixed top-0 w-full bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <Image src="/hbworks-logo.png" alt="HomeBase" width={28} height={28} quality={100} />
-              <span className="text-xl font-bold text-gray-900">HOMEBASE</span>
-            </div>
+            <span className="text-xl font-bold text-gray-900">HOMEBASE</span>
             
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('membership')} className="text-gray-700 hover:text-[#FF5722] transition">
+            {/* Horizontal Nav - Always Visible */}
+            <div className="flex items-center gap-6">
+              <button onClick={() => scrollToSection('membership')} className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
                 Membership
               </button>
-              <button onClick={() => scrollToSection('amenities')} className="text-gray-700 hover:text-[#FF5722] transition">
+              <button onClick={() => scrollToSection('amenities')} className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
                 Amenities
               </button>
-              <button onClick={() => scrollToSection('location')} className="text-gray-700 hover:text-[#FF5722] transition">
+              <button onClick={() => scrollToSection('location')} className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
                 Location
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-[#FF5722] transition">
+              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
                 Contact
               </button>
               <a 
                 href="https://calendly.com/jakeabel217/30min" 
                 target="_blank"
-                className="bg-[#FF5722] text-white px-6 py-2 rounded hover:bg-[#E64A19] transition"
+                className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm"
               >
                 Book Tour
               </a>
             </div>
-
-            {/* Mobile menu button */}
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2"
-            >
-              <svg width="24" height="24" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
           </div>
-
-          {/* Mobile Nav */}
-          {mobileMenuOpen && (
-            <div className="md:hidden pb-4 space-y-2">
-              <button onClick={() => scrollToSection('membership')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50">
-                Membership
-              </button>
-              <button onClick={() => scrollToSection('amenities')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50">
-                Amenities
-              </button>
-              <button onClick={() => scrollToSection('location')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50">
-                Location
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50">
-                Contact
-              </button>
-              <a 
-                href="https://calendly.com/jakeabel217/30min" 
-                target="_blank"
-                className="block px-4 py-2 bg-[#FF5722] text-white rounded hover:bg-[#E64A19] transition text-center"
-              >
-                Book Tour
-              </a>
-            </div>
-          )}
         </div>
       </nav>
 
@@ -92,24 +50,23 @@ export default function Home() {
           src="/images/hero.jpg" 
           alt="HomeBase Workspace" 
           fill 
-          className="object-cover brightness-75"
+          className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20" />
         <div className="relative h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-12 max-w-4xl shadow-2xl">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
               Your Downtown Baltimore Workspace
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
+            <p className="text-xl md:text-2xl text-gray-700 mb-8">
               Flexible co-working space near Camden Yards. Professional. Accessible 24/7. No long-term commitment.
             </p>
             <a 
               href="https://calendly.com/jakeabel217/30min" 
               target="_blank"
-              className="inline-block bg-[#FF5722] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#E64A19] transition shadow-lg"
+              className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline"
             >
-              Schedule Your Tour
+              Schedule Your Tour →
             </a>
           </div>
         </div>
@@ -251,7 +208,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">The Space</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image src="/images/workspace.jpg" alt="Workspace" fill className="object-cover hover:scale-110 transition duration-300" />
             </div>
@@ -263,6 +220,12 @@ export default function Home() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image src="/images/entrance.jpg" alt="Entrance" fill className="object-cover hover:scale-110 transition duration-300" />
+            </div>
+            <div className="relative h-64 overflow-hidden rounded-lg">
+              <Image src="/images/aerial.jpg" alt="Aerial View" fill className="object-cover hover:scale-110 transition duration-300" />
+            </div>
+            <div className="relative h-64 overflow-hidden rounded-lg">
+              <Image src="/images/location.jpg" alt="Location" fill className="object-cover hover:scale-110 transition duration-300" />
             </div>
           </div>
         </div>
@@ -359,7 +322,15 @@ export default function Home() {
       <section id="contact" className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-          <p className="text-xl text-gray-600 mb-12">Ready to see the space? Let's schedule a tour.</p>
+          <p className="text-xl text-gray-600 mb-4">Ready to see the space? Let's schedule a tour.</p>
+          
+          <a 
+            href="https://calendly.com/jakeabel217/30min" 
+            target="_blank"
+            className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline mb-12"
+          >
+            Book Your Tour →
+          </a>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div>

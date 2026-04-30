@@ -255,15 +255,6 @@ export default function Home() {
             <div className="overflow-hidden rounded-lg">
               <img src="/images/building.jpg" alt="Building" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
             </div>
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/entrance.jpg" alt="Entrance" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/aerial.jpg" alt="Aerial View" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/location.jpg" alt="Location" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
           </div>
         </div>
       </section>
@@ -276,65 +267,53 @@ export default function Home() {
             <p className="text-lg text-gray-600">Everything you need to work productively</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-x-8 gap-y-6 max-w-5xl mx-auto">
-            <div className="flex items-center gap-3">
-              <svg width="24" height="24" className="text-[#FF5722] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              <div>
-                <h3 className="font-bold text-gray-900">24/7 Secure Access</h3>
-                <p className="text-sm text-gray-600">Custom keycodes anytime</p>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-2">24/7 Secure Access</h3>
+              <p className="text-sm text-gray-600">Custom keycodes anytime</p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <svg width="24" height="24" className="text-[#FF5722] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
-              <div>
-                <h3 className="font-bold text-gray-900">Meeting Rooms</h3>
-                <p className="text-sm text-gray-600">Professional spaces</p>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Meeting Rooms</h3>
+              <p className="text-sm text-gray-600">Professional spaces</p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <svg width="24" height="24" className="text-[#FF5722] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
               </svg>
-              <div>
-                <h3 className="font-bold text-gray-900">High-Speed WiFi</h3>
-                <p className="text-sm text-gray-600">Fast, reliable internet</p>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-2">High-Speed WiFi</h3>
+              <p className="text-sm text-gray-600">Fast, reliable internet</p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <svg width="24" height="24" className="text-[#FF5722] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
-              <div>
-                <h3 className="font-bold text-gray-900">Flexible Terms</h3>
-                <p className="text-sm text-gray-600">Month-to-month</p>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Flexible Terms</h3>
+              <p className="text-sm text-gray-600">Month-to-month</p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <svg width="24" height="24" className="text-[#FF5722] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
-              <div>
-                <h3 className="font-bold text-gray-900">Premium Coffee</h3>
-                <p className="text-sm text-gray-600">Complimentary beverages</p>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Premium Coffee</h3>
+              <p className="text-sm text-gray-600">Complimentary beverages</p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <svg width="24" height="24" className="text-[#FF5722] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
               </svg>
-              <div>
-                <h3 className="font-bold text-gray-900">Kitchen & Fridge</h3>
-                <p className="text-sm text-gray-600">Shared facilities</p>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Kitchen & Fridge</h3>
+              <p className="text-sm text-gray-600">Shared facilities</p>
             </div>
           </div>
         </div>

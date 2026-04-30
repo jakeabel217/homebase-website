@@ -136,7 +136,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-8">
             {/* Hot Desk */}
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Hot Desk</h3>
@@ -245,7 +245,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">The Space</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image src="/images/workspace.jpg" alt="Workspace" fill className="object-cover hover:scale-110 transition duration-300" />
             </div>

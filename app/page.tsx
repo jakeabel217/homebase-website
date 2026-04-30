@@ -43,7 +43,16 @@ export default function Home() {
               <a 
                 href="https://calendly.com/jakeabel217/30min" 
                 target="_blank"
-                className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap border border-gray-200 bg-gray-50 px-4 py-2 rounded"
+                className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
+                style={{
+                  border: '1px solid #e5e7eb',
+                  backgroundColor: '#f9fafb',
+                  paddingLeft: '1rem',
+                  paddingRight: '1rem',
+                  paddingTop: '0.5rem',
+                  paddingBottom: '0.5rem',
+                  borderRadius: '0.25rem'
+                }}
               >
                 Book Tour
               </a>
@@ -62,7 +71,18 @@ export default function Home() {
           priority
         />
         <div className="relative h-full flex items-center justify-center text-center px-4">
-          <div className="bg-white rounded-xl px-10 py-8 max-w-3xl shadow-2xl">
+          <div 
+            className="max-w-3xl"
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '0.75rem',
+              paddingLeft: '2.5rem',
+              paddingRight: '2.5rem',
+              paddingTop: '2rem',
+              paddingBottom: '2rem',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+            }}
+          >
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
               Your Downtown Baltimore Workspace
             </h1>

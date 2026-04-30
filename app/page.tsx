@@ -430,12 +430,12 @@ export default function Home() {
           <span className="text-2xl font-bold mb-6 block">HOMEBASE</span>
           <div className="flex justify-center gap-12 mb-6">
             <div>
-              <span className="text-white">Email: </span>
-              <a href="mailto:jakeabel217@gmail.com" className="text-[#FF5722] hover:underline">jakeabel217@gmail.com</a>
+              <span style={{ color: '#ffffff' }}>Email: </span>
+              <a href="mailto:jakeabel217@gmail.com" style={{ color: '#FF5722' }} className="hover:underline">jakeabel217@gmail.com</a>
             </div>
             <div>
-              <span className="text-white">Phone: </span>
-              <a href="tel:443-376-8512" className="text-[#FF5722] hover:underline">443-376-8512</a>
+              <span style={{ color: '#ffffff' }}>Phone: </span>
+              <a href="tel:443-376-8512" style={{ color: '#FF5722' }} className="hover:underline">443-376-8512</a>
             </div>
           </div>
           <p className="text-gray-400 mb-6">300 W Pratt Street, Baltimore, MD 21201</p>

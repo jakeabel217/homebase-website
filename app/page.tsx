@@ -54,7 +54,7 @@ export default function Home() {
           priority
         />
         <div className="relative h-full flex items-center justify-center text-center px-4">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-12 max-w-4xl shadow-2xl">
+          <div className="bg-white/95 rounded-2xl p-12 max-w-4xl shadow-2xl">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
               Your Downtown Baltimore Workspace
             </h1>

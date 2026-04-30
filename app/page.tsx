@@ -33,8 +33,8 @@ export default function Home() {
                 <Image 
                   src="/images/icon.png" 
                   alt="HomeBase Icon" 
-                  width={25} 
-                  height={25}
+                  width={40} 
+                  height={40}
                   className="object-contain"
                 />
                 <Image 

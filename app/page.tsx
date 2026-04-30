@@ -341,16 +341,16 @@ export default function Home() {
           </div>
 
           {/* Details Below */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+          <div className="grid grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Address</h3>
               <p className="text-gray-700">300 W Pratt Street<br/>Baltimore, MD 21201</p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Parking</h3>
               <p className="text-gray-700">Monthly parking available for additional fee</p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Nearby</h3>
               <p className="text-gray-700">Walking distance to restaurants, entertainment, and transit</p>
             </div>
@@ -360,42 +360,35 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-          <p className="text-xl text-gray-600 mb-4">Ready to see the space? Let's schedule a tour.</p>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+            <p className="text-xl text-gray-600 mb-4">Ready to see the space? Let's schedule a tour.</p>
+            <a 
+              href="https://calendly.com/jakeabel217/30min" 
+              target="_blank"
+              className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline"
+            >
+              Schedule a Tour →
+            </a>
+          </div>
           
-          <a 
-            href="https://calendly.com/jakeabel217/30min" 
-            target="_blank"
-            className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline mb-12"
-          >
-            Schedule a Tour →
-          </a>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
+          <div className="grid grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <h3 className="font-bold text-gray-900 mb-2">Email</h3>
               <a href="mailto:jakeabel217@gmail.com" className="text-[#FF5722] hover:underline">jakeabel217@gmail.com</a>
             </div>
 
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
               <a href="tel:443-376-8512" className="text-[#FF5722] hover:underline">443-376-8512</a>
             </div>
 
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Contact</h3>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+              <h3 className="font-bold text-gray-900 mb-2">Contact</h3>
               <p className="text-gray-700">Jake Abel</p>
             </div>
           </div>
-
-          <a 
-            href="https://calendly.com/jakeabel217/30min" 
-            target="_blank"
-            className="inline-block text-[#FF5722] text-xl font-bold hover:text-[#E64A19] transition underline"
-          >
-            Schedule Your Tour Now →
-          </a>
         </div>
       </section>
 

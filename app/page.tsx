@@ -125,7 +125,7 @@ export default function Home() {
       <section id="membership" className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Membership Options</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Membership Options</h2>
             <p className="text-lg text-gray-600 mb-4">Month-to-month flexibility. Cancel anytime. Yearly discounts available.</p>
             <a 
               href="https://calendly.com/jakeabel217/30min" 
@@ -241,29 +241,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">The Space</h2>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/workspace.jpg" alt="Workspace" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/desk.jpg" alt="Desk" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <img src="/images/building.jpg" alt="Building" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Amenities */}
       <section id="amenities" className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Amenities</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Amenities</h2>
             <p className="text-lg text-gray-600">Everything you need to work productively</p>
           </div>
 
@@ -323,7 +305,7 @@ export default function Home() {
       <section id="location" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Prime Downtown Location</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Prime Downtown Location</h2>
             <p className="text-xl text-gray-600 mb-8">300 W Pratt Street — steps from Camden Yards and the Inner Harbor</p>
           </div>
 
@@ -358,11 +340,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Photo Gallery */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-12">The Space</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/workspace.jpg" alt="Workspace" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/desk.jpg" alt="Desk" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/building.jpg" alt="Building" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             <p className="text-xl text-gray-600 mb-4">Ready to see the space? Let's schedule a tour.</p>
             <a 
               href="https://calendly.com/jakeabel217/30min" 
@@ -373,7 +373,7 @@ export default function Home() {
             </a>
           </div>
           
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Email</h3>
               <a href="mailto:jakeabel217@gmail.com" className="text-[#FF5722] hover:underline">jakeabel217@gmail.com</a>
@@ -383,11 +383,6 @@ export default function Home() {
               <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
               <a href="tel:443-376-8512" className="text-[#FF5722] hover:underline">443-376-8512</a>
             </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
-              <h3 className="font-bold text-gray-900 mb-2">Contact</h3>
-              <p className="text-gray-700">Jake Abel</p>
-            </div>
           </div>
         </div>
       </section>
@@ -396,12 +391,7 @@ export default function Home() {
       <footer className="bg-[#2D2D2D] text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <span className="text-2xl font-bold mb-4 block">HOMEBASE</span>
-          <p className="text-gray-400 mb-2">300 W Pratt Street, Baltimore, MD 21201</p>
-          <p className="text-gray-400 mb-6">
-            <a href="mailto:jakeabel217@gmail.com" className="text-[#FF5722] hover:underline">jakeabel217@gmail.com</a>
-            {' '} | {' '}
-            <a href="tel:443-376-8512" className="text-[#FF5722] hover:underline">443-376-8512</a>
-          </p>
+          <p className="text-gray-400 mb-6">300 W Pratt Street, Baltimore, MD 21201</p>
           <p className="text-gray-500 text-sm">© 2026 HomeBase. All rights reserved.</p>
         </div>
       </footer>

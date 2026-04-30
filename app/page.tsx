@@ -246,23 +246,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">The Space</h2>
           <div className="grid grid-cols-3 gap-4">
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image src="/images/workspace.jpg" alt="Workspace" fill className="object-cover hover:scale-110 transition duration-300" />
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/workspace.jpg" alt="Workspace" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
             </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image src="/images/desk.jpg" alt="Desk" fill className="object-cover hover:scale-110 transition duration-300" />
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/desk.jpg" alt="Desk" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
             </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image src="/images/building.jpg" alt="Building" fill className="object-cover hover:scale-110 transition duration-300" />
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/building.jpg" alt="Building" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
             </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image src="/images/entrance.jpg" alt="Entrance" fill className="object-cover hover:scale-110 transition duration-300" />
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/entrance.jpg" alt="Entrance" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
             </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image src="/images/aerial.jpg" alt="Aerial View" fill className="object-cover hover:scale-110 transition duration-300" />
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/aerial.jpg" alt="Aerial View" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
             </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image src="/images/location.jpg" alt="Location" fill className="object-cover hover:scale-110 transition duration-300" />
+            <div className="overflow-hidden rounded-lg">
+              <img src="/images/location.jpg" alt="Location" className="w-full h-64 object-cover hover:scale-110 transition duration-300" />
             </div>
           </div>
         </div>

@@ -16,10 +16,69 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Force SVG icon sizing */
-#pricing svg {
-  width: 20px !important;
-  height: 20px !important;
+/* Prevent horizontal scroll globally */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure SVG icons are properly sized - fix giant icon bug */
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* Lock down SVG sizes in specific contexts */
+.w-5 svg,
+.h-5 svg {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+}
+
+.w-6 svg,
+.h-6 svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.w-7 svg,
+.h-7 svg {
+  width: 1.75rem !important;
+  height: 1.75rem !important;
+}
+
+.w-10 svg,
+.h-10 svg {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+
+.w-12 svg,
+.h-12 svg {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+/* Ensure images don't cause overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth transitions */
+@layer utilities {
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
 }

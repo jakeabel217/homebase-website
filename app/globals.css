@@ -19,7 +19,7 @@ html {
 }
 
 /* Force SVG icon sizing */
-.pricing svg {
+#pricing svg {
   width: 20px !important;
   height: 20px !important;
 }

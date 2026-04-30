@@ -1,8 +1,20 @@
 'use client';
 
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -16,18 +28,27 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#FF5722] rounded flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                  <polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
+            {!isScrolled && (
+              <div className="flex items-center gap-3">
+                <Image 
+                  src="/images/icon.png" 
+                  alt="HomeBase Icon" 
+                  width={25} 
+                  height={25}
+                  className="object-contain"
+                />
+                <Image 
+                  src="/images/logo.png" 
+                  alt="HOMEBASE" 
+                  width={190} 
+                  height={25}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xl font-bold text-gray-900">HOMEBASE</span>
-            </div>
+            )}
             
             {/* Horizontal Nav - Always Visible */}
-            <div className="flex items-center gap-6">
+            <div className={`flex items-center gap-6 ${isScrolled ? 'ml-0' : 'ml-auto'}`}>
               <button onClick={() => scrollToSection('membership')} className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
                 Membership
               </button>

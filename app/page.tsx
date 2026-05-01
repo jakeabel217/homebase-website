@@ -13,7 +13,8 @@ export default function Home() {
     { src: '/images/building.jpg', alt: 'Building' },
     { src: '/images/aerial.jpg', alt: 'Aerial View' },
     { src: '/images/entrance.jpg', alt: 'Entrance' },
-    { src: '/images/location.jpg', alt: 'Location' },
+    { src: '/images/office1.jpg', alt: 'Private Office' },
+    { src: '/images/office2.jpg', alt: 'Reception Area' },
   ];
 
   useEffect(() => {
@@ -298,10 +299,10 @@ export default function Home() {
 
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <h3 className="font-bold text-gray-900 mb-2">Flexible Terms</h3>
-              <p className="text-sm text-gray-600">Month-to-month</p>
+              <h3 className="font-bold text-gray-900 mb-2">Mailing Address</h3>
+              <p className="text-sm text-gray-600">Receive packages and business mail</p>
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">

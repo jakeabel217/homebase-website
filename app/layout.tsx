@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
-import GoogleAnalytics from "./components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "HomeBase - Co-Working Space in Baltimore",
@@ -54,7 +54,25 @@ export default function RootLayout({
         {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> */}
       </head>
       <body>
-        <GoogleAnalytics />
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-GB1EZWG7PG"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GB1EZWG7PG', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
         {children}
       </body>
     </html>

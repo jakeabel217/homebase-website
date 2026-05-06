@@ -50,8 +50,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Search Console Verification - Replace with your verification code */}
-        {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> */}
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="N7cAQeXjZLCYH7cykkph7GfZzJimNk_9VF1ToqWBEuk" />
       </head>
       <body>
         {/* Google Analytics */}

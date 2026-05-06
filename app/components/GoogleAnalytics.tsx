@@ -1,59 +1,63 @@
 'use client';
 
-import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 
 // Google Analytics tracking component
 // Docs: https://nextjs.org/docs/app/building-your-application/optimizing/analytics
 
+declare global {
+  interface Window {
+    gtag?: (
+      command: string,
+      targetId: string,
+      config?: Record<string, any>
+    ) => void;
+    dataLayer?: any[];
+  }
+}
+
+const GA_MEASUREMENT_ID = 'G-GB1EZWG7PG';
+
 export default function GoogleAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const GA_MEASUREMENT_ID = 'G-GB1EZWG7PG';
 
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID) return;
+    // Load gtag.js script
+    const script1 = document.createElement('script');
+    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script1.async = true;
+    document.head.appendChild(script1);
 
+    // Initialize dataLayer and gtag
+    const script2 = document.createElement('script');
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_MEASUREMENT_ID}');
+    `;
+    document.head.appendChild(script2);
+
+    return () => {
+      // Cleanup on unmount
+      document.head.removeChild(script1);
+      document.head.removeChild(script2);
+    };
+  }, []);
+
+  useEffect(() => {
     // Track pageviews on route change
-    const url = pathname + searchParams.toString();
-    
-    // @ts-expect-error - gtag is loaded by Script component
     if (typeof window.gtag !== 'undefined') {
-      // @ts-expect-error
+      const url = pathname + searchParams.toString();
       window.gtag('config', GA_MEASUREMENT_ID, {
         page_path: url,
       });
     }
-  }, [pathname, searchParams, GA_MEASUREMENT_ID]);
+  }, [pathname, searchParams]);
 
-  // Don't render if no measurement ID
-  if (!GA_MEASUREMENT_ID) {
-    return null;
-  }
-
-  return (
-    <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
-    </>
-  );
+  return null;
 }
 
 // Helper function to track custom events
@@ -62,9 +66,7 @@ export const trackEvent = (
   eventName: string,
   eventParams?: Record<string, any>
 ) => {
-  // @ts-expect-error - gtag is loaded by Script component
   if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
-    // @ts-expect-error
     window.gtag('event', eventName, eventParams);
   }
 };

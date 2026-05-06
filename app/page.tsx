@@ -15,6 +15,7 @@ export default function Home() {
     { src: '/images/entrance.jpg', alt: 'Entrance' },
     { src: '/images/office1.jpg', alt: 'Private Office' },
     { src: '/images/office2.jpg', alt: 'Reception Area' },
+    { src: '/images/floorplan.png', alt: 'Floor Plan' },
   ];
 
   useEffect(() => {
@@ -145,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Membership Options */}
-      <section id="membership" className="py-20 px-4 bg-gray-50">
+      <section id="membership" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Membership Options</h2>
@@ -161,164 +162,173 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-8">
             {/* Hot Desk */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Hot Desk</h3>
-              <div className="text-4xl font-bold text-[#FF5722] mb-6">$200<span className="text-lg text-gray-600">/mo</span></div>
-              <ul className="space-y-3">
+            <div className="bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Hot Desk</h3>
+              <div className="text-3xl font-bold text-[#FF5722] mb-4">$200<span className="text-base text-gray-600">/mo</span></div>
+              <ul className="space-y-2 text-sm mb-6">
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Flexible seating in shared workspace</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">24/7 keycode access</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Meeting room access</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Premium coffee & amenities</span>
                 </li>
               </ul>
+              <button className="w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+                Reserve Space →
+              </button>
             </div>
 
             {/* Dedicated Desk - Featured */}
-            <div className="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition border-2 border-[#FF5722] relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#FF5722] text-white px-6 py-2 rounded-md text-xs font-bold tracking-wide shadow-md">
+            <div className="bg-gray-100 p-8 rounded-lg shadow-xl hover:shadow-2xl transition border-2 border-[#FF5722] relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-[#FF5722] text-white px-4 py-1 rounded-md text-xs font-bold tracking-wide shadow-md">
                   MOST POPULAR
                 </span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2 mt-3">Dedicated Desk</h3>
-              <div className="text-4xl font-bold text-[#FF5722] mb-6">$300<span className="text-lg text-gray-600">/mo</span></div>
-              <ul className="space-y-3">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 mt-2">Dedicated Desk</h3>
+              <div className="text-3xl font-bold text-[#FF5722] mb-4">$300<span className="text-base text-gray-600">/mo</span></div>
+              <ul className="space-y-2 text-sm mb-6">
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Your own assigned desk</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Lockable storage cabinet</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">24/7 keycode access</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">All hot desk amenities</span>
                 </li>
               </ul>
+              <button className="w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+                Reserve Space →
+              </button>
             </div>
 
             {/* Private Office */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Private Office</h3>
-              <div className="text-4xl font-bold text-[#FF5722] mb-6">$600<span className="text-lg text-gray-600">/mo</span></div>
-              <ul className="space-y-3">
+            <div className="bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Private Office</h3>
+              <div className="text-3xl font-bold text-[#FF5722] mb-4">$600<span className="text-base text-gray-600">/mo</span></div>
+              <ul className="space-y-2 text-sm mb-6">
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Fully private office space</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Lockable door for security</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">24/7 keycode access</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Priority meeting room access</span>
                 </li>
               </ul>
+              <button className="w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+                Reserve Space →
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Amenities */}
-      <section id="amenities" className="py-20 px-4 bg-gray-50">
+      <section id="amenities" className="py-20 px-4 bg-[#2D2D2D]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Amenities</h2>
-            <p className="text-lg text-gray-600">Everything you need to work productively</p>
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Amenities</h2>
+            <p className="text-lg text-gray-300">Everything you need to work productively</p>
           </div>
 
           <div className="grid grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              <h3 className="font-bold text-gray-900 mb-2">24/7 Secure Access</h3>
-              <p className="text-sm text-gray-600">Custom keycodes anytime</p>
+              <h3 className="font-bold text-white mb-2">24/7 Secure Access</h3>
+              <p className="text-sm text-gray-300">Custom keycodes anytime</p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
-              <h3 className="font-bold text-gray-900 mb-2">Meeting Rooms</h3>
-              <p className="text-sm text-gray-600">Professional spaces</p>
+              <h3 className="font-bold text-white mb-2">Meeting Rooms</h3>
+              <p className="text-sm text-gray-300">Professional spaces</p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
               </svg>
-              <h3 className="font-bold text-gray-900 mb-2">High-Speed WiFi</h3>
-              <p className="text-sm text-gray-600">Fast, reliable internet</p>
+              <h3 className="font-bold text-white mb-2">High-Speed WiFi</h3>
+              <p className="text-sm text-gray-300">Fast, reliable internet</p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <h3 className="font-bold text-gray-900 mb-2">Mailing Address</h3>
-              <p className="text-sm text-gray-600">Receive packages and business mail</p>
+              <h3 className="font-bold text-white mb-2">Mailing Address</h3>
+              <p className="text-sm text-gray-300">Receive packages and business mail</p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
-              <h3 className="font-bold text-gray-900 mb-2">Premium Coffee</h3>
-              <p className="text-sm text-gray-600">Complimentary beverages</p>
+              <h3 className="font-bold text-white mb-2">Premium Coffee</h3>
+              <p className="text-sm text-gray-300">Complimentary beverages</p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
               </svg>
-              <h3 className="font-bold text-gray-900 mb-2">Kitchen & Fridge</h3>
-              <p className="text-sm text-gray-600">Shared facilities</p>
+              <h3 className="font-bold text-white mb-2">Kitchen & Fridge</h3>
+              <p className="text-sm text-gray-300">Shared facilities</p>
             </div>
           </div>
         </div>
@@ -404,6 +414,21 @@ export default function Home() {
                 </svg>
               </button>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Details */}
+      <section className="py-20 px-4 bg-[#2D2D2D]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold text-center text-white mb-12">Details</h2>
+          <div className="space-y-6 text-white text-lg leading-relaxed">
+            <p>
+              Baltimore is a city of dreamers and doers and the Homebase location at 300 W. Pratt is designed with those dreamers and doers in mind. As one of Baltimore's most sought-after business addresses it's a dream for professionals to have a chance to work inside. The historic building offers tall, wide windows that flood the workspace with natural light and the intricate architecture offers lots to look at for the wandering, daydreaming eye.
+            </p>
+            <p>
+              The trip to 300 W. Pratt St. is a simple morning commute from nearly anywhere in the city. If you are driving you can access this location off of the interstate and there is reserved parking nearby. If public transportation is more your style, there is a convenient bus stop not too far from the front door. Either way, getting to work is easy but if you are using Homebase you probably aren't worried about being late.
+            </p>
           </div>
         </div>
       </section>

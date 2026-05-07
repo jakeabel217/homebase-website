@@ -60,13 +60,13 @@ export default function BlogIndex() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-96 pt-16 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="relative h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      <section className="relative pt-24 pb-16 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div className="relative flex items-center justify-center text-center px-4">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
               HomeBase Blog
             </h1>
-            <p className="text-lg text-gray-200">
+            <p className="text-lg text-gray-200 leading-relaxed">
               Tips, insights, and stories about coworking, workspace, and building community in Baltimore
             </p>
           </div>
@@ -75,45 +75,67 @@ export default function BlogIndex() {
 
       {/* Blog Posts Grid */}
       <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <article key={post.slug} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="h-48 bg-gradient-to-br from-[#FF5722] to-[#E64A19] relative overflow-hidden">
+              <article 
+                key={post.slug} 
+                className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
+              >
+                <div className="h-48 bg-gradient-to-br from-[#FF5722] to-[#E64A19] relative overflow-hidden flex-shrink-0">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="text-sm text-gray-500 mb-2">
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="text-xs font-semibold text-[#FF5722] uppercase tracking-wide mb-3">
                     {new Date(post.date).toLocaleDateString('en-US', {
                       year: 'numeric',
-                      month: 'long',
+                      month: 'short',
                       day: 'numeric',
                     })}
                   </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                  <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 leading-tight">
                     {post.title}
                   </h2>
-                  <p className="text-gray-700 mb-4 line-clamp-3">
+                  <p className="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed flex-grow">
                     {post.excerpt}
                   </p>
-                  <div className="text-xs text-gray-600 mb-4">
+                  <div className="text-xs text-gray-500 mb-4 font-medium">
                     By {post.author}
                   </div>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="inline-block text-[#FF5722] font-semibold hover:text-[#E64A19] transition"
+                    className="inline-block text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm"
                   >
-                    Read More →
+                    Read Article →
                   </Link>
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Ready to find your perfect workspace?
+          </h2>
+          <p className="text-gray-600 mb-8 text-lg">
+            Tour HomeBase Baltimore and discover why hundreds of professionals have made it their workspace home.
+          </p>
+          <a
+            href="https://calendly.com/jakeabel217/30min"
+            target="_blank"
+            className="inline-block px-8 py-3 bg-[#FF5722] text-white font-semibold rounded-lg hover:bg-[#E64A19] transition"
+          >
+            Book Your Free Tour
+          </a>
         </div>
       </section>
 

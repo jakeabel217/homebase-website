@@ -90,7 +90,7 @@ export default function BlogIndex() {
                     className="object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-10 flex flex-col flex-grow">
                   <div className="text-xs font-semibold text-[#FF5722] uppercase tracking-wide mb-3">
                     {new Date(post.date).toLocaleDateString('en-US', {
                       year: 'numeric',

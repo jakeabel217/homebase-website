@@ -166,7 +166,7 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-8">
             {/* Hot Desk */}
-            <div className="bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-gray-100 p-10 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Hot Desk</h3>
               <div className="text-3xl font-bold text-[#FF5722] mb-4">$200<span className="text-base text-gray-600">/mo</span></div>
               <ul className="space-y-2 text-sm mb-6">
@@ -201,7 +201,7 @@ export default function Home() {
             </div>
 
             {/* Dedicated Desk - Featured */}
-            <div className="bg-gray-100 p-8 rounded-lg shadow-xl hover:shadow-2xl transition border-2 border-[#FF5722] relative">
+            <div className="bg-gray-100 p-10 rounded-lg shadow-xl hover:shadow-2xl transition border-2 border-[#FF5722] relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <span className="bg-[#FF5722] text-white px-4 py-1 rounded-md text-xs font-bold tracking-wide shadow-md">
                   MOST POPULAR
@@ -241,7 +241,7 @@ export default function Home() {
             </div>
 
             {/* Private Office */}
-            <div className="bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-gray-100 p-10 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Private Office</h3>
               <div className="text-3xl font-bold text-[#FF5722] mb-4">$600<span className="text-base text-gray-600">/mo</span></div>
               <ul className="space-y-2 text-sm mb-6">
@@ -287,7 +287,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-3 gap-8">
-            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-10 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -295,7 +295,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Custom keycodes anytime</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-10 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
@@ -303,7 +303,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Professional spaces</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-10 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
               </svg>
@@ -311,7 +311,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Fast, reliable internet</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-10 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -319,7 +319,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Receive packages and business mail</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-10 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
@@ -327,7 +327,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Complimentary beverages</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-8 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-10 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
               </svg>
@@ -361,15 +361,15 @@ export default function Home() {
 
           {/* Details Below */}
           <div className="grid grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-white p-10 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Address</h3>
               <p className="text-gray-700">300 W Pratt Street<br/>Baltimore, MD 21201</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-white p-10 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Parking</h3>
               <p className="text-gray-700">Monthly parking available for additional fee</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-white p-10 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Nearby</h3>
               <p className="text-gray-700">Walking distance to restaurants, entertainment, and transit</p>
             </div>

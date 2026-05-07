@@ -60,7 +60,7 @@ export default function TopCoworkingSpaces() {
 
       {/* Blog Post Content */}
       <article className="pt-24 pb-20 bg-white">
-        <div className="mx-auto px-4 sm:px-6">
+        <div className="mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl mx-auto">
             {/* Header */}
             <header className="mb-12">

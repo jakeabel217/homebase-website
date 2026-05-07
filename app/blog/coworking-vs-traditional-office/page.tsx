@@ -1,7 +1,17 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Coworking vs Traditional Office: Which is Right for Your Baltimore Business?",
+  description: "A comprehensive comparison of coworking spaces versus traditional office leases for Baltimore businesses.",
+  openGraph: {
+    title: "Coworking vs Traditional Office: Which is Right for Your Baltimore Business?",
+    description: "A comprehensive comparison of coworking spaces versus traditional office leases for Baltimore businesses.",
+    url: "https://homebase-website.vercel.app/blog/coworking-vs-traditional-office",
+    type: "article",
+  },
+};
 
 export default function CoworkingVsTraditional() {
   return (

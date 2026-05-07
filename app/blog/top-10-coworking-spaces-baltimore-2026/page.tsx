@@ -1,7 +1,17 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Top 10 Coworking Spaces in Baltimore (2026 Guide) - HomeBase Blog",
+  description: "A comprehensive comparison of the top 10 coworking spaces in Baltimore, including pricing, amenities, and ideal use cases.",
+  openGraph: {
+    title: "Top 10 Coworking Spaces in Baltimore (2026 Guide) - HomeBase Blog",
+    description: "A comprehensive comparison of the top 10 coworking spaces in Baltimore, including pricing, amenities, and ideal use cases.",
+    url: "https://homebase-website.vercel.app/blog/top-10-coworking-spaces-baltimore-2026",
+    type: "article",
+  },
+};
 
 export default function TopCoworkingSpaces() {
   return (

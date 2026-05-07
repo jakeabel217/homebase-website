@@ -1,5 +1,3 @@
-'use client';
-
 import { blogPosts } from './blog-posts';
 import Link from 'next/link';
 import Image from 'next/image';

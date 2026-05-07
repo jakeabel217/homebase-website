@@ -1,7 +1,17 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "A Day in the Life: Working from HomeBase Baltimore",
+  description: "A first-person narrative from a HomeBase member showcasing a typical day at Baltimore's premier coworking space.",
+  openGraph: {
+    title: "A Day in the Life: Working from HomeBase Baltimore",
+    description: "A first-person narrative from a HomeBase member showcasing a typical day at Baltimore's premier coworking space.",
+    url: "https://homebase-website.vercel.app/blog/day-in-life-homebase-baltimore",
+    type: "article",
+  },
+};
 
 export default function DayInLifePost() {
   return (

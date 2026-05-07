@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,6 +86,9 @@ export default function Home() {
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
                 Contact
               </button>
+              <Link href="/blog" className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
+                Blog
+              </Link>
               <a 
                 href="https://calendly.com/jakeabel217/30min" 
                 target="_blank"

@@ -60,8 +60,8 @@ export default function CoworkingVsTraditional() {
 
       {/* Blog Post Content */}
       <article className="pt-24 pb-20 bg-white">
-        <div className="mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-2xl mx-auto">
+        <div className="mx-auto px-8 sm:px-16 lg:px-32 max-w-4xl">
+          <div className="max-w-lg mx-auto">
             {/* Header */}
             <header className="mb-12">
               <div className="text-sm font-semibold text-[#FF5722] uppercase tracking-wide mb-4">

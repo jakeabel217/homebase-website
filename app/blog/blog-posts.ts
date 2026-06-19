@@ -10,6 +10,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "private-office-rental-baltimore",
+    title: "Private Office Rental in Baltimore: Single & Double Offices at HomeBase",
+    excerpt:
+      "Looking for private office rental in Baltimore? HomeBase offers fully furnished single and double private offices downtown near Camden Yards — flexible, month-to-month, starting at $500/month.",
+    date: "2026-06-19",
+    author: "HomeBase Baltimore",
+    image: "/images/private-office.jpg",
+    description:
+      "Private office rental in downtown Baltimore. Fully furnished single and double private offices near Camden Yards, month-to-month from $500/month.",
+  },
+  {
     slug: "top-10-coworking-spaces-baltimore-2026",
     title: "Top 10 Coworking Spaces in Baltimore (2026 Guide)",
     excerpt:

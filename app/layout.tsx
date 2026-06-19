@@ -3,13 +3,13 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HomeBase - Co-Working Space in Baltimore",
-  description: "Flexible workspace in downtown Baltimore. Hot desks, dedicated desks, and private offices near Camden Yards.",
-  keywords: "coworking baltimore, office space baltimore, hot desk baltimore, private office camden yards, flexible workspace baltimore",
+  title: "HomeBase - Coworking & Private Office Rental in Baltimore",
+  description: "Coworking and private office rental in downtown Baltimore. Single and double private offices, hot desks, and dedicated desks near Camden Yards — month-to-month from $500/month.",
+  keywords: "private office rental baltimore, single office rental baltimore, double office rental baltimore, private office baltimore, office space rental baltimore, coworking baltimore, office space baltimore, hot desk baltimore, flexible workspace baltimore",
   authors: [{ name: "HomeBase" }],
   openGraph: {
-    title: "HomeBase - Co-Working Space in Baltimore",
-    description: "Flexible workspace in downtown Baltimore. Hot desks, dedicated desks, and private offices near Camden Yards.",
+    title: "HomeBase - Coworking & Private Office Rental in Baltimore",
+    description: "Coworking and private office rental in downtown Baltimore. Single and double private offices, hot desks, and dedicated desks near Camden Yards — month-to-month from $500/month.",
     url: "https://homebase-website.vercel.app",
     siteName: "HomeBase",
     images: [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HomeBase - Co-Working Space in Baltimore",
-    description: "Flexible workspace in downtown Baltimore. Hot desks, dedicated desks, and private offices near Camden Yards.",
+    title: "HomeBase - Coworking & Private Office Rental in Baltimore",
+    description: "Coworking and private office rental in downtown Baltimore. Single and double private offices, hot desks, and dedicated desks near Camden Yards — month-to-month from $500/month.",
     images: ["/og-image.png"],
   },
   robots: {

@@ -9,8 +9,6 @@ export default function Home() {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   const photos = [
-    { src: '/images/workspace.jpg', alt: 'Workspace' },
-    { src: '/images/desk.jpg', alt: 'Desk' },
     { src: '/images/building.jpg', alt: 'Building' },
     { src: '/images/aerial.jpg', alt: 'Aerial View' },
     { src: '/images/entrance.jpg', alt: 'Entrance' },

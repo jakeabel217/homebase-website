@@ -73,6 +73,25 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Conversion tracking: fire a GA4 event whenever a Book Tour / Schedule a Tour (Calendly) link is clicked */}
+        <Script
+          id="conversion-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('click', function (e) {
+                var link = e.target.closest && e.target.closest('a[href*="calendly.com"]');
+                if (link && typeof gtag === 'function') {
+                  gtag('event', 'book_tour_click', {
+                    event_category: 'engagement',
+                    event_label: link.getAttribute('href'),
+                    transport_type: 'beacon'
+                  });
+                }
+              });
+            `,
+          }}
+        />
         {children}
       </body>
     </html>

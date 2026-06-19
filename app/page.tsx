@@ -15,6 +15,18 @@ export default function Home() {
     { src: '/images/office1.jpg', alt: 'Private Office' },
     { src: '/images/office2.jpg', alt: 'Reception Area' },
     { src: '/images/floorplan.png', alt: 'Floor Plan' },
+    { src: '/images/gallery-01.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-02.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-03.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-04.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-05.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-06.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-07.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-08.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-09.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-10.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-11.jpg', alt: 'HomeBase Baltimore workspace' },
+    { src: '/images/gallery-12.jpg', alt: 'HomeBase Baltimore workspace' },
   ];
 
   useEffect(() => {

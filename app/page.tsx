@@ -438,10 +438,7 @@ export default function Home() {
           <h2 className="text-5xl md:text-6xl font-bold text-center text-white mb-12">Details</h2>
           <div className="space-y-6 text-white text-lg leading-relaxed">
             <p>
-              Baltimore is a city of dreamers and doers and the Homebase location at 300 W. Pratt is designed with those dreamers and doers in mind. As one of Baltimore's most sought-after business addresses it's a dream for professionals to have a chance to work inside. The historic building offers tall, wide windows that flood the workspace with natural light and the intricate architecture offers lots to look at for the wandering, daydreaming eye.
-            </p>
-            <p>
-              The trip to 300 W. Pratt St. is a simple morning commute from nearly anywhere in the city. If you are driving you can access this location off of the interstate and there is reserved parking nearby. If public transportation is more your style, there is a convenient bus stop not too far from the front door. Either way, getting to work is easy but if you are using Homebase you probably aren't worried about being late.
+              Home Base at 300 W Pratt offers flexible, affordable private offices and coworking in downtown Baltimore. Near Camden Yards, the Convention Center, and major highways, it’s perfect for small businesses, freelancers, and remote workers. With on-site spots like Chipotle and Dunkin’, plus Starbucks and Jimmy John’s nearby, convenience is built-in. Explore Little Italy and Harbor East for local restaurants and shops. If you’re seeking a productive, straightforward workspace, this is a great place to lock in!
             </p>
           </div>
         </div>

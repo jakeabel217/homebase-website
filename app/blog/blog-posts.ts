@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
       "Looking for the best coworking space in Baltimore? Our comprehensive 2026 guide compares the top 10 coworking spaces in Charm City with pricing, amenities, and locations.",
     date: "2026-01-15",
     author: "HomeBase Baltimore",
-    image: "/og-image.png",
+    image: "/images/building.jpg",
     description:
       "Discover the best coworking spaces in Baltimore. Compare pricing, amenities, and locations to find your perfect workspace.",
   },
@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
       "Choosing between coworking and traditional office space? Our comprehensive guide compares costs, flexibility, and amenities to help Baltimore businesses make the right decision.",
     date: "2026-01-20",
     author: "HomeBase Baltimore",
-    image: "/og-image.png",
+    image: "/images/workspace.jpg",
     description:
       "A comprehensive decision framework comparing coworking spaces and traditional offices for Baltimore businesses.",
   },
@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
       "Experience a typical day at HomeBase Baltimore through a member's eyes. Discover the amenities, community, and workspace that makes HomeBase Baltimore's premier coworking space.",
     date: "2026-01-25",
     author: "Sarah Mitchell, Marketing Consultant & HomeBase Member",
-    image: "/og-image.png",
+    image: "/images/office2.jpg",
     description:
       "Go behind the scenes with a HomeBase member for an authentic look at a day in Baltimore's premier coworking space.",
   },

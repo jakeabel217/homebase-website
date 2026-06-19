@@ -1,7 +1,5 @@
 @import './fonts.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --orange: #FF5722;
@@ -42,22 +40,4 @@ svg {
 .h-6 svg {
   width: 100% !important;
   height: 100% !important;
-}
-
-/* Make the Blog nav link match the other nav items.
-   Without this, the browser's default link color (purple) shows through. */
-nav a[href="/blog"] {
-  color: #374151 !important; /* gray-700, same as the other nav items */
-}
-nav a[href="/blog"]:hover {
-  color: #FF5722 !important; /* orange, same hover color as the others */
-}
-
-/* Booking / "Schedule a Tour" + "Book Tour" links should be orange.
-   They're links too, so the browser's default link color overrides them otherwise. */
-a[href*="calendly.com"] {
-  color: #FF5722 !important; /* orange */
-}
-a[href*="calendly.com"]:hover {
-  color: #E64A19 !important; /* darker orange on hover */
 }

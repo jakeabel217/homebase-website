@@ -136,7 +136,7 @@ export default function Home() {
               Your Downtown Baltimore Workspace
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-6">
-              Flexible co-working space near Camden Yards. Professional. Accessible 24/7. No long-term commitment.
+              Flexible co-working and office space near Camden Yards. Professional. Accessible 24/7. No long-term commitment.
             </p>
             <a 
               href="https://calendly.com/jakeabel217/30min" 
@@ -195,9 +195,9 @@ export default function Home() {
                   <span className="text-gray-700">Premium coffee & amenities</span>
                 </li>
               </ul>
-              <button className="w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
-                Reserve Space →
-              </button>
+              <a href="https://calendly.com/jakeabel217/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+                Schedule a Tour →
+              </a>
             </div>
 
             {/* Dedicated Desk - Featured */}
@@ -235,15 +235,15 @@ export default function Home() {
                   <span className="text-gray-700">All hot desk amenities</span>
                 </li>
               </ul>
-              <button className="w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
-                Reserve Space →
-              </button>
+              <a href="https://calendly.com/jakeabel217/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+                Schedule a Tour →
+              </a>
             </div>
 
             {/* Private Office */}
             <div className="bg-gray-100 p-16 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Private Office</h3>
-              <div className="text-3xl font-bold text-[#FF5722] mb-4">$600<span className="text-base text-gray-600">/mo</span></div>
+              <div className="text-3xl font-bold text-[#FF5722] mb-4">from $500<span className="text-base text-gray-600">/mo</span></div>
               <ul className="space-y-2 text-sm mb-6">
                 <li className="flex items-start gap-2">
                   <svg width="16" height="16" className="w-4 h-4 text-[#FF5722] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -270,9 +270,9 @@ export default function Home() {
                   <span className="text-gray-700">Priority meeting room access</span>
                 </li>
               </ul>
-              <button className="w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
-                Reserve Space →
-              </button>
+              <a href="https://calendly.com/jakeabel217/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+                Schedule a Tour →
+              </a>
             </div>
           </div>
         </div>

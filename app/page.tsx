@@ -7,6 +7,7 @@ import Link from 'next/link';
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const photos = [
     { src: '/images/building.jpg', alt: 'Building' },
@@ -39,7 +40,7 @@ export default function Home() {
   }, []);
 
   const handleNextPhoto = () => {
-    if (currentPhotoIndex < photos.length - 3) {
+    if (currentPhotoIndex < photos.length - 1) {
       setCurrentPhotoIndex(currentPhotoIndex + 1);
     }
   };
@@ -55,7 +56,11 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setMenuOpen(false);
   };
+
+  // Clamp desktop starting index so we always show 3 photos
+  const desktopStartIndex = Math.min(currentPhotoIndex, photos.length - 3);
 
   return (
     <div className="bg-white">
@@ -82,8 +87,8 @@ export default function Home() {
               </div>
             )}
             
-            {/* Horizontal Nav - Always Visible */}
-            <div className={`flex items-center gap-6 ${isScrolled ? 'ml-0' : 'ml-auto'}`}>
+            {/* Desktop Nav — hidden on mobile */}
+            <div className={`hidden md:flex items-center gap-6 ${isScrolled ? 'ml-0' : 'ml-auto'}`}>
               <button onClick={() => scrollToSection('membership')} className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium">
                 Membership
               </button>
@@ -116,7 +121,59 @@ export default function Home() {
                 Book Tour
               </a>
             </div>
+
+            {/* Hamburger button — mobile only */}
+            <button
+              className="md:hidden ml-auto p-2 text-gray-700 hover:text-[#FF5722] transition"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Mobile dropdown menu */}
+          {menuOpen && (
+            <div className="md:hidden py-4 border-t border-gray-100 flex flex-col gap-4">
+              <button onClick={() => scrollToSection('membership')} className="text-left text-gray-700 hover:text-[#FF5722] transition text-sm font-medium py-1">
+                Membership
+              </button>
+              <button onClick={() => scrollToSection('amenities')} className="text-left text-gray-700 hover:text-[#FF5722] transition text-sm font-medium py-1">
+                Amenities
+              </button>
+              <button onClick={() => scrollToSection('location')} className="text-left text-gray-700 hover:text-[#FF5722] transition text-sm font-medium py-1">
+                Location
+              </button>
+              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-[#FF5722] transition text-sm font-medium py-1">
+                Contact
+              </button>
+              <Link href="/blog" className="text-gray-700 hover:text-[#FF5722] transition text-sm font-medium py-1" onClick={() => setMenuOpen(false)}>
+                Blog
+              </Link>
+              <a 
+                href="https://calendly.com/jakeabel217/30min" 
+                target="_blank"
+                className="inline-block w-fit text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
+                style={{
+                  border: '1px solid #e5e7eb',
+                  backgroundColor: '#f9fafb',
+                  paddingLeft: '1rem',
+                  paddingRight: '1rem',
+                  paddingTop: '0.5rem',
+                  paddingBottom: '0.5rem',
+                  borderRadius: '0.25rem'
+                }}
+              >
+                Book Tour
+              </a>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -131,14 +188,10 @@ export default function Home() {
         />
         <div className="relative h-full flex items-center justify-center text-center px-4">
           <div 
-            className="max-w-3xl"
+            className="max-w-3xl px-4 py-6 md:px-10 md:py-8"
             style={{
               backgroundColor: '#ffffff',
               borderRadius: '0.75rem',
-              paddingLeft: '2.5rem',
-              paddingRight: '2.5rem',
-              paddingTop: '2rem',
-              paddingBottom: '2rem',
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
             }}
           >
@@ -163,7 +216,7 @@ export default function Home() {
       <section id="membership" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Membership Options</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Membership Options</h2>
             <p className="text-lg text-gray-600 mb-4">Month-to-month flexibility. Cancel anytime. Yearly discounts available.</p>
             <a 
               href="https://calendly.com/jakeabel217/30min" 
@@ -174,9 +227,9 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Hot Desk */}
-            <div className="bg-gray-100 p-16 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-gray-100 p-6 md:p-16 rounded-lg shadow-md hover:shadow-xl transition">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Hot Desk</h3>
               <div className="text-3xl font-bold text-[#FF5722] mb-4">$200<span className="text-base text-gray-600">/mo</span></div>
               <ul className="space-y-2 text-sm mb-6">
@@ -211,9 +264,9 @@ export default function Home() {
             </div>
 
             {/* Dedicated Desk - Featured */}
-            <div className="bg-gray-100 p-16 rounded-lg shadow-xl hover:shadow-2xl transition border-2 border-[#FF5722] relative">
+            <div className="bg-gray-100 p-6 md:p-16 rounded-lg shadow-xl hover:shadow-2xl transition border-2 border-[#FF5722] relative mt-4 sm:mt-0">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#FF5722] text-white px-4 py-1 rounded-md text-xs font-bold tracking-wide shadow-md">
+                <span className="bg-[#FF5722] text-white px-4 py-1 rounded-md text-xs font-bold tracking-wide shadow-md whitespace-nowrap">
                   MOST POPULAR
                 </span>
               </div>
@@ -251,7 +304,7 @@ export default function Home() {
             </div>
 
             {/* Private Office */}
-            <div className="bg-gray-100 p-16 rounded-lg shadow-md hover:shadow-xl transition">
+            <div className="bg-gray-100 p-6 md:p-16 rounded-lg shadow-md hover:shadow-xl transition sm:col-span-2 md:col-span-1">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Private Office</h3>
               <div className="text-3xl font-bold text-[#FF5722] mb-4">from $500<span className="text-base text-gray-600">/mo</span></div>
               <ul className="space-y-2 text-sm mb-6">
@@ -292,12 +345,12 @@ export default function Home() {
       <section id="amenities" className="py-20 px-4 bg-[#2D2D2D]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Amenities</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Amenities</h2>
             <p className="text-lg text-gray-300">Everything you need to work productively</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
-            <div className="bg-[#3A3A3A] p-16 rounded-lg hover:bg-[#404040] transition text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-[#3A3A3A] p-6 md:p-16 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -305,7 +358,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Custom keycodes anytime</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-16 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-6 md:p-16 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
@@ -313,7 +366,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Professional spaces</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-16 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-6 md:p-16 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
               </svg>
@@ -321,7 +374,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Fast, reliable internet</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-16 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-6 md:p-16 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -329,7 +382,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Receive packages and business mail</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-16 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-6 md:p-16 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
@@ -337,7 +390,7 @@ export default function Home() {
               <p className="text-sm text-gray-300">Complimentary beverages</p>
             </div>
 
-            <div className="bg-[#3A3A3A] p-16 rounded-lg hover:bg-[#404040] transition text-center">
+            <div className="bg-[#3A3A3A] p-6 md:p-16 rounded-lg hover:bg-[#404040] transition text-center">
               <svg width="24" height="24" className="text-[#FF5722] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
               </svg>
@@ -352,7 +405,7 @@ export default function Home() {
       <section id="location" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Prime Downtown Location</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Prime Downtown Location</h2>
             <p className="text-xl text-gray-600 mb-8">300 W Pratt Street — steps from Camden Yards and the Inner Harbor</p>
           </div>
 
@@ -370,16 +423,16 @@ export default function Home() {
           </div>
 
           {/* Details Below */}
-          <div className="grid grid-cols-3 gap-8">
-            <div className="bg-white p-16 rounded-lg shadow-md hover:shadow-xl transition text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 md:p-16 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Address</h3>
               <p className="text-gray-700">300 W Pratt Street<br/>Baltimore, MD 21201</p>
             </div>
-            <div className="bg-white p-16 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-white p-6 md:p-16 rounded-lg shadow-md hover:shadow-xl transition text-center">
               <h3 className="font-bold text-gray-900 mb-2">Parking</h3>
               <p className="text-gray-700">Monthly parking available for additional fee</p>
             </div>
-            <div className="bg-white p-16 rounded-lg shadow-md hover:shadow-xl transition text-center">
+            <div className="bg-white p-6 md:p-16 rounded-lg shadow-md hover:shadow-xl transition text-center sm:col-span-2 md:col-span-1">
               <h3 className="font-bold text-gray-900 mb-2">Nearby</h3>
               <p className="text-gray-700">Walking distance to restaurants, entertainment, and transit</p>
             </div>
@@ -390,44 +443,81 @@ export default function Home() {
       {/* Photo Gallery */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-12">Photo Gallery</h2>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center text-gray-900 mb-12">Photo Gallery</h2>
           <div className="relative">
-            <div className="grid grid-cols-3 gap-4">
-              {photos.slice(currentPhotoIndex, currentPhotoIndex + 3).map((photo, index) => (
-                <div key={currentPhotoIndex + index} className="overflow-hidden rounded-lg">
-                  <img 
-                    src={photo.src} 
-                    alt={photo.alt} 
-                    className="w-full h-64 object-cover hover:scale-110 transition duration-300" 
-                  />
-                </div>
-              ))}
+            {/* Mobile gallery — single photo */}
+            <div className="block md:hidden">
+              <div className="overflow-hidden rounded-lg">
+                <img 
+                  src={photos[currentPhotoIndex].src} 
+                  alt={photos[currentPhotoIndex].alt} 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <button
+                  onClick={handlePrevPhoto}
+                  disabled={currentPhotoIndex === 0}
+                  className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition disabled:opacity-30 disabled:cursor-not-allowed"
+                  aria-label="Previous photo"
+                >
+                  <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <span className="text-sm text-gray-500">{currentPhotoIndex + 1} / {photos.length}</span>
+                <button
+                  onClick={handleNextPhoto}
+                  disabled={currentPhotoIndex === photos.length - 1}
+                  className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition disabled:opacity-30 disabled:cursor-not-allowed"
+                  aria-label="Next photo"
+                >
+                  <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
-            
-            {/* Navigation Arrows */}
-            {currentPhotoIndex > 0 && (
-              <button
-                onClick={handlePrevPhoto}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition"
-                aria-label="Previous photos"
-              >
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-            )}
-            
-            {currentPhotoIndex < photos.length - 3 && (
-              <button
-                onClick={handleNextPhoto}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition"
-                aria-label="Next photos"
-              >
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            )}
+
+            {/* Desktop gallery — 3 photos */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-3 gap-4">
+                {photos.slice(desktopStartIndex, desktopStartIndex + 3).map((photo, index) => (
+                  <div key={desktopStartIndex + index} className="overflow-hidden rounded-lg">
+                    <img 
+                      src={photo.src} 
+                      alt={photo.alt} 
+                      className="w-full h-64 object-cover hover:scale-110 transition duration-300" 
+                    />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Desktop Navigation Arrows */}
+              {desktopStartIndex > 0 && (
+                <button
+                  onClick={handlePrevPhoto}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition"
+                  aria-label="Previous photos"
+                >
+                  <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+              )}
+              
+              {desktopStartIndex < photos.length - 3 && (
+                <button
+                  onClick={handleNextPhoto}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition"
+                  aria-label="Next photos"
+                >
+                  <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -435,7 +525,7 @@ export default function Home() {
       {/* Details */}
       <section className="py-20 px-4 bg-[#2D2D2D]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold text-center text-white mb-12">Details</h2>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-12">Details</h2>
           <div className="space-y-6 text-white text-lg leading-relaxed">
             <p>
               Home Base at 300 W Pratt offers flexible, affordable private offices and coworking in downtown Baltimore. Near Camden Yards, the Convention Center, and major highways, it’s perfect for small businesses, freelancers, and remote workers. With on-site spots like Chipotle and Dunkin’, plus Starbucks and Jimmy John’s nearby, convenience is built-in. Explore Little Italy and Harbor East for local restaurants and shops. If you’re seeking a productive, straightforward workspace, this is a great place to lock in!
@@ -448,7 +538,7 @@ export default function Home() {
       <section id="contact" className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             <p className="text-xl text-gray-600 mb-4">Ready to see the space? Let's schedule a tour.</p>
             <a 
               href="https://calendly.com/jakeabel217/30min" 
@@ -465,7 +555,7 @@ export default function Home() {
       <footer className="bg-[#2D2D2D] text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <span className="text-2xl font-bold mb-6 block">HOMEBASE</span>
-          <div className="flex justify-center gap-12 mb-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-12 mb-6">
             <div>
               <span style={{ color: '#ffffff' }}>Email: </span>
               <a href="mailto:jakeabel217@gmail.com" style={{ color: '#FF5722' }} className="hover:underline">jakeabel217@gmail.com</a>

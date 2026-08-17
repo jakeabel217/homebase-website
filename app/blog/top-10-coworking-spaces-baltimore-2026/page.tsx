@@ -38,7 +38,7 @@ export default function TopCoworkingSpaces() {
                 Blog
               </Link>
               <a 
-                href="https://calendly.com/jakeabel217/30min" 
+                href="https://calendly.com/homebasebaltimore/30min" 
                 target="_blank"
                 className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
                 style={{
@@ -152,7 +152,7 @@ export default function TopCoworkingSpaces() {
               </p>
 
               <p className="text-lg">
-                <a href="https://calendly.com/jakeabel217/30min" target="_blank" className="text-[#FF5722] font-bold hover:text-[#E64A19] transition">
+                <a href="https://calendly.com/homebasebaltimore/30min" target="_blank" className="text-[#FF5722] font-bold hover:text-[#E64A19] transition">
                   Book a free tour of HomeBase Baltimore →
                 </a>
               </p>
@@ -286,7 +286,7 @@ export default function TopCoworkingSpaces() {
               <p className="text-lg">
                 <strong>Ready to see for yourself?</strong>{' '}
                 <a 
-                  href="https://calendly.com/jakeabel217/30min" 
+                  href="https://calendly.com/homebasebaltimore/30min" 
                   target="_blank"
                   className="text-[#FF5722] font-bold hover:text-[#E64A19] transition"
                 >

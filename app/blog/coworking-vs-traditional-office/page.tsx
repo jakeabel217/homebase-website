@@ -38,7 +38,7 @@ export default function CoworkingVsTraditional() {
                 Blog
               </Link>
               <a 
-                href="https://calendly.com/jakeabel217/30min" 
+                href="https://calendly.com/homebasebaltimore/30min" 
                 target="_blank"
                 className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
                 style={{
@@ -342,7 +342,7 @@ export default function CoworkingVsTraditional() {
               </p>
 
               <ol className="list-decimal pl-6 space-y-3 text-lg">
-                <li><a href="https://calendly.com/jakeabel217/30min" target="_blank" className="text-[#FF5722] font-bold hover:text-[#E64A19] transition">Schedule a free tour of HomeBase Baltimore</a> to see our space and meet the community</li>
+                <li><a href="https://calendly.com/homebasebaltimore/30min" target="_blank" className="text-[#FF5722] font-bold hover:text-[#E64A19] transition">Schedule a free tour of HomeBase Baltimore</a> to see our space and meet the community</li>
                 <li>Try a day pass ($25) to actually work from the space for a full day</li>
                 <li>Talk to current members about their experience (we'll introduce you during your tour)</li>
                 <li>Compare the total costs of coworking versus your current or planned office</li>
@@ -363,7 +363,7 @@ export default function CoworkingVsTraditional() {
 
               <p className="text-lg">
                 <a 
-                  href="https://calendly.com/jakeabel217/30min" 
+                  href="https://calendly.com/homebasebaltimore/30min" 
                   target="_blank"
                   className="text-[#FF5722] font-bold hover:text-[#E64A19] transition"
                 >

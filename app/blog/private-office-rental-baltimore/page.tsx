@@ -39,7 +39,7 @@ export default function PrivateOfficeRentalBaltimore() {
                 Blog
               </Link>
               <a
-                href="https://calendly.com/jakeabel217/30min"
+                href="https://calendly.com/homebasebaltimore/30min"
                 target="_blank"
                 className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
                 style={{
@@ -155,7 +155,7 @@ export default function PrivateOfficeRentalBaltimore() {
 
               <p className="text-lg">
                 <a
-                  href="https://calendly.com/jakeabel217/30min"
+                  href="https://calendly.com/homebasebaltimore/30min"
                   target="_blank"
                   className="text-[#FF5722] font-bold hover:text-[#E64A19] transition"
                 >

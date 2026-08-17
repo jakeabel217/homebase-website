@@ -72,7 +72,7 @@ vercel --prod
 
 - **Location**: 300 W Pratt Street, Baltimore, MD 21201
 - **Email**: jakeabel217@gmail.com
-- **Book a Tour**: [Schedule via Calendly](https://calendly.com/jakeabel217/30min)
+- **Book a Tour**: [Schedule via Calendly](https://calendly.com/homebasebaltimore/30min)
 
 ## Project Structure
 

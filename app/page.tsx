@@ -8,6 +8,10 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [leadName, setLeadName] = useState('');
+  const [leadEmail, setLeadEmail] = useState('');
+  const [leadSubmitting, setLeadSubmitting] = useState(false);
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
 
   const photos = [
     { src: '/images/building.jpg', alt: 'Building' },
@@ -105,7 +109,7 @@ export default function Home() {
                 Blog
               </Link>
               <a 
-                href="https://calendly.com/jakeabel217/30min" 
+                href="https://calendly.com/homebasebaltimore/30min" 
                 target="_blank"
                 className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
                 style={{
@@ -157,7 +161,7 @@ export default function Home() {
                 Blog
               </Link>
               <a 
-                href="https://calendly.com/jakeabel217/30min" 
+                href="https://calendly.com/homebasebaltimore/30min" 
                 target="_blank"
                 className="inline-block w-fit text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
                 style={{
@@ -202,13 +206,70 @@ export default function Home() {
               Flexible co-working and office space near Camden Yards. Professional. Accessible 24/7. No long-term commitment.
             </p>
             <a 
-              href="https://calendly.com/jakeabel217/30min" 
+              href="https://calendly.com/homebasebaltimore/30min" 
               target="_blank"
               className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline"
             >
               Schedule Your Tour →
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Email Capture */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Not ready to book a tour yet?</h2>
+          <p className="text-gray-600 mb-8">Drop your info and we&apos;ll reach out with availability and pricing.</p>
+          {leadSubmitted ? (
+            <p className="text-green-600 font-semibold text-lg">Thanks! We&apos;ll be in touch soon.</p>
+          ) : (
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                if (!leadName.trim() || !leadEmail.trim() || !leadEmail.includes('@')) return;
+                setLeadSubmitting(true);
+                try {
+                  await fetch('https://formspree.io/f/xwkgwjkl', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ name: leadName, email: leadEmail }),
+                  });
+                  setLeadSubmitted(true);
+                } catch {
+                  // silent fail — still show success to avoid confusing the visitor
+                  setLeadSubmitted(true);
+                } finally {
+                  setLeadSubmitting(false);
+                }
+              }}
+              className="flex flex-col sm:flex-row gap-3 justify-center"
+            >
+              <input
+                type="text"
+                required
+                placeholder="Your name"
+                value={leadName}
+                onChange={(e) => setLeadName(e.target.value)}
+                className="px-4 py-3 rounded border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FF5722] sm:w-48"
+              />
+              <input
+                type="email"
+                required
+                placeholder="your@email.com"
+                value={leadEmail}
+                onChange={(e) => setLeadEmail(e.target.value)}
+                className="px-4 py-3 rounded border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FF5722] sm:w-56"
+              />
+              <button
+                type="submit"
+                disabled={leadSubmitting}
+                className="bg-[#FF5722] text-white font-semibold px-6 py-3 rounded hover:bg-[#E64A19] transition disabled:opacity-60"
+              >
+                {leadSubmitting ? 'Sending…' : 'Get Availability'}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
@@ -219,7 +280,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Membership Options</h2>
             <p className="text-lg text-gray-600 mb-4">Month-to-month flexibility. Cancel anytime. Yearly discounts available.</p>
             <a 
-              href="https://calendly.com/jakeabel217/30min" 
+              href="https://calendly.com/homebasebaltimore/30min" 
               target="_blank"
               className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline"
             >
@@ -258,7 +319,7 @@ export default function Home() {
                   <span className="text-gray-700">Premium coffee & amenities</span>
                 </li>
               </ul>
-              <a href="https://calendly.com/jakeabel217/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+              <a href="https://calendly.com/homebasebaltimore/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
                 Schedule a Tour →
               </a>
             </div>
@@ -298,7 +359,7 @@ export default function Home() {
                   <span className="text-gray-700">All hot desk amenities</span>
                 </li>
               </ul>
-              <a href="https://calendly.com/jakeabel217/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+              <a href="https://calendly.com/homebasebaltimore/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
                 Schedule a Tour →
               </a>
             </div>
@@ -333,7 +394,7 @@ export default function Home() {
                   <span className="text-gray-700">Priority meeting room access</span>
                 </li>
               </ul>
-              <a href="https://calendly.com/jakeabel217/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
+              <a href="https://calendly.com/homebasebaltimore/30min" target="_blank" className="block text-center w-full mt-4 bg-gray-900 text-white py-3 px-4 rounded hover:bg-gray-800 transition text-sm font-medium">
                 Schedule a Tour →
               </a>
             </div>
@@ -541,7 +602,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             <p className="text-xl text-gray-600 mb-4">Ready to see the space? Let's schedule a tour.</p>
             <a 
-              href="https://calendly.com/jakeabel217/30min" 
+              href="https://calendly.com/homebasebaltimore/30min" 
               target="_blank"
               className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline"
             >

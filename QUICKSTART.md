@@ -96,7 +96,7 @@ cd "/Users/ericabel/Projects/Home Base/website-new"
 - Orioles orange (#FF5722) accent color
 - RohnRounded custom font
 - Responsive design (desktop-first)
-- All CTAs → https://calendly.com/jakeabel217/30min
+- All CTAs → https://calendly.com/homebasebaltimore/30min
 - Contact: jakeabel217@gmail.com
 - Location: 300 W Pratt St, Baltimore MD
 

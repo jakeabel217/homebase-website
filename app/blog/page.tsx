@@ -39,7 +39,7 @@ export default function BlogIndex() {
                 Blog
               </Link>
               <a 
-                href="https://calendly.com/jakeabel217/30min" 
+                href="https://calendly.com/homebasebaltimore/30min" 
                 target="_blank"
                 className="text-[#FF5722] font-semibold hover:text-[#E64A19] transition text-sm whitespace-nowrap"
                 style={{
@@ -130,7 +130,7 @@ export default function BlogIndex() {
             Tour HomeBase Baltimore and discover why hundreds of professionals have made it their workspace home.
           </p>
           <a
-            href="https://calendly.com/jakeabel217/30min"
+            href="https://calendly.com/homebasebaltimore/30min"
             target="_blank"
             className="inline-block px-8 py-3 bg-[#FF5722] text-white font-semibold rounded-lg hover:bg-[#E64A19] transition"
           >

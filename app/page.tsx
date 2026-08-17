@@ -1,9 +1,7 @@
 'use client';
 
 // ─── Formspree endpoint ────────────────────────────────────────────────────────
-// Replace YOUR_FORM_ID_HERE with your real Formspree form ID (e.g. "xpwzpkya")
-// Sign up free at https://formspree.io and copy the ID from your form's endpoint URL.
-const FORMSPREE_URL = 'https://formspree.io/f/xpwzpkya';
+const FORMSPREE_URL = 'https://formspree.io/f/xoeakrda';
 // ──────────────────────────────────────────────────────────────────────────────
 
 import { useState, useEffect } from 'react';

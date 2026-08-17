@@ -7,6 +7,7 @@ const FORMSPREE_URL = 'https://formspree.io/f/xoeakrda';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import TourBooking from './components/TourBooking';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -675,17 +676,11 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-            <p className="text-xl text-gray-600 mb-4">Ready to see the space? Let's schedule a tour.</p>
-            <a 
-              href="https://calendly.com/homebasebaltimore/30min" 
-              target="_blank"
-              className="inline-block text-[#FF5722] text-lg font-bold hover:text-[#E64A19] transition underline"
-            >
-              Schedule a Tour →
-            </a>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Book a Tour</h2>
+            <p className="text-xl text-gray-600">Pick a time below — takes 30 seconds.</p>
           </div>
+          <TourBooking />
         </div>
       </section>
 

@@ -1,5 +1,11 @@
 'use client';
 
+// ─── Formspree endpoint ────────────────────────────────────────────────────────
+// Replace YOUR_FORM_ID_HERE with your real Formspree form ID (e.g. "xpwzpkya")
+// Sign up free at https://formspree.io and copy the ID from your form's endpoint URL.
+const FORMSPREE_URL = 'https://formspree.io/f/xpwzpkya';
+// ──────────────────────────────────────────────────────────────────────────────
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,6 +18,12 @@ export default function Home() {
   const [leadEmail, setLeadEmail] = useState('');
   const [leadSubmitting, setLeadSubmitting] = useState(false);
   const [leadSubmitted, setLeadSubmitted] = useState(false);
+
+  // State for the pricing-adjacent email capture
+  const [pricingName, setPricingName] = useState('');
+  const [pricingEmail, setPricingEmail] = useState('');
+  const [pricingSubmitting, setPricingSubmitting] = useState(false);
+  const [pricingSubmitted, setPricingSubmitted] = useState(false);
 
   const photos = [
     { src: '/images/building.jpg', alt: 'Building' },
@@ -399,6 +411,73 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Pricing Email Capture — lower-commitment entry point near membership cards */}
+      <section className="py-14 px-4 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#FF5722] mb-2">No commitment required</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            Curious about availability?
+          </h2>
+          <p className="text-gray-500 mb-8 text-sm md:text-base">
+            Share your name and email and we&apos;ll reach out with current openings — no sales pressure.
+          </p>
+          {pricingSubmitted ? (
+            <div className="inline-flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 px-6 py-3 rounded-lg font-semibold">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              Got it! We&apos;ll be in touch soon.
+            </div>
+          ) : (
+            <form
+              onSubmit={async (e: React.FormEvent<HTMLFormElement>) => {
+                e.preventDefault();
+                if (!pricingName.trim() || !pricingEmail.trim() || !pricingEmail.includes('@')) return;
+                setPricingSubmitting(true);
+                try {
+                  await fetch(FORMSPREE_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ name: pricingName, email: pricingEmail, source: 'pricing-section' }),
+                  });
+                  setPricingSubmitted(true);
+                } catch {
+                  // Silent fail — show success to avoid confusing the visitor
+                  setPricingSubmitted(true);
+                } finally {
+                  setPricingSubmitting(false);
+                }
+              }}
+              className="flex flex-col sm:flex-row gap-3 justify-center"
+            >
+              <input
+                type="text"
+                required
+                placeholder="First name"
+                value={pricingName}
+                onChange={(e) => setPricingName(e.target.value)}
+                className="px-4 py-3 rounded border border-gray-300 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FF5722] sm:w-44"
+              />
+              <input
+                type="email"
+                required
+                placeholder="your@email.com"
+                value={pricingEmail}
+                onChange={(e) => setPricingEmail(e.target.value)}
+                className="px-4 py-3 rounded border border-gray-300 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FF5722] sm:w-60"
+              />
+              <button
+                type="submit"
+                disabled={pricingSubmitting}
+                className="bg-[#FF5722] text-white font-semibold px-6 py-3 rounded hover:bg-[#E64A19] transition disabled:opacity-60 whitespace-nowrap"
+              >
+                {pricingSubmitting ? 'Sending…' : 'Get Availability'}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
